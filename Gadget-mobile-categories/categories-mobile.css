@@ -1,0 +1,17 @@
+#catlinks {
+    border: 1px solid #a2a9b1;
+    background-color: #f8f9fa;
+    padding: 5px;
+    margin-top: 1em;
+    clear: both;
+    font-size: 0.875em;
+}
+
+.mw-hidden-catlinks a,
+.mw-normal-catlinks a {
+    padding-right: 8px;
+}
+
+.mw-hidden-cats-hidden {
+    display: none;
+}

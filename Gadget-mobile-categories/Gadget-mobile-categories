@@ -1,0 +1,13 @@
+{
+	"settings": {
+		"rights": [],
+		"default": false,
+		"hidden": false,
+		"skins": [ "minerva" ]
+	},
+	"module": {
+		"scripts": [ "Gadget-mobile-categories.js" ],
+		"styles": [ "Gadget-mobile-categories.css" ],
+		"dependencies": [ "mediawiki.api" ]
+	}
+}
