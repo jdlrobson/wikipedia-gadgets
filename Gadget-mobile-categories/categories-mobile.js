@@ -1,6 +1,7 @@
 /**
  * Renders categories at the bottom of the mobile site.
- * 
+ * https://github.com/jdlrobson/wikipedia-gadgets/tree/master/Gadget-mobile-categories
+ * version 1.0.0
  */
 
 function catToLink( category ) {
