@@ -8,6 +8,7 @@
 	"module": {
 		"scripts": [ "Gadget-mobile-categories.js" ],
 		"styles": [ "Gadget-mobile-categories.css" ],
+		"targets": [ "desktop", "mobile" ],
 		"dependencies": [ "mediawiki.api" ]
 	}
 }
