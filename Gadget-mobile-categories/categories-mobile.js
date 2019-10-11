@@ -12,14 +12,14 @@ function catToLink( category ) {
 }
 
 $( window ).one( 'scroll', function () {
-    console.log('go')
     var api = new mw.Api();
     api.ajax( {
         action: 'query',
         format: 'json',
+        clprop: 'hidden',
         formatversion: 2,
         prop: 'categories',
-        titles: mw.config.get( 'wgTitle' ),
+        titles: mw.config.get( 'wgRelevantPageName' ),
         cllimit: '50'
     } ).then( function ( resp ) {
         var categories = resp.query && resp.query.pages && resp.query.pages[0].categories || [],
@@ -40,14 +40,16 @@ $( window ).one( 'scroll', function () {
                     .text( 'Categories:' )
                 ].concat( normal.map( catToLink ) )
             ),
-            $( '<div>' ).attr( {
-                id: 'mw-hidden-catlinks',
-                class: 'mw-hidden-catlinks mw-hidden-cats-hidden'
-            } ).append( [
-                $( '<span>' )
-                    .text( 'Hidden categories:' )
-                ].concat( normal.map( catToLink ) )
-            ].concat( hidden.map( catToLink ) ) )
+            mw.user.options.get('showhiddencats' ) === '1' &&
+                $( '<div>' ).attr( {
+                    id: 'mw-hidden-catlinks',
+                    class: 'mw-hidden-catlinks'
+                } ).append(
+                    [
+                        $( '<span>' )
+                            .text( 'Hidden categories:' )
+                    ].concat( hidden.map( catToLink ) )
+                )
         ] ).appendTo( '#bodyContent' );
     } );
 } );
